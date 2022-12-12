@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: revert-layer;
+    font-style: italic;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(25, 211, 133, 0.85), rgba(0,0,0, 0.85)), url(../images/lib4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    margin: auto;
+    width: 80%;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lg {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 5vw;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    position: absolute;
+    width: 50%;
+    top: 55%;
+    left: 25%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+button {
+    position: relative;
+    width: 200px;
+    padding: 15px 0;
+    margin: 20px 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #000;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button span {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    width: 0;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+.signup-cont {
+    display: none;
+    position: absolute;
+    transform: translateY(-21%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.signup-form h1 {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.signup-form {
+    margin-top: 1%;
+    width: 40%;
+    transform: translateX(80%);
+    align-self: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.signup-form form {
+    padding: 2% 8%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.signup-form form label {
+    padding: 5px 0;
+}
+
+.signup-form form input{
+    height: 30px;
+    padding-left: 2%;
+    font-size: 15px;
+    outline: none;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+#gender {
+    height: 30px;
+    padding-left: 2%;
+    font-size: 15px;
+    outline: none;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.signup-form .signup-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-form .signup-btn button {
+    color: #000;
+}
+
+.signup-form .signup-btn button:hover {
+    color: #fff;
+}
+
+.signin-cont {
+    display: none;
+    position: absolute;
+    transform: translateY(-21%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.signin-form h1 {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.signin-form {
+    margin-top: 1%;
+    width: 40%;
+    margin-top: 14%;
+    transform: translateX(80%);
+    align-self: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.signin-form form {
+    padding: 2% 8%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.signin-form form label {
+    padding: 5px 0;
+}
+
+.signin-form form input{
+    height: 30px;
+    padding-left: 2%;
+    font-size: 15px;
+    outline: none;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.signin-form .signin-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.signin-form .signin-btn button {
+    color: #000;
+}
+
+.signin-form .signin-btn button:hover {
+    color: #fff;
+}
+
+.lg-msg {
+    text-align: center;
+    padding-top: 2%;
+    color: rgba(0, 128, 0, 0.678);
+}
+
+.footer {
+    color: #fff;
+    text-align: center;
+    margin-top: 34%;
+}

@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title id="title">Welcome | e-Books</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style/ind.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="#"><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#" id="nav-sp">Sign Up</a></li>
+                <li><a href="#" id="nav-sn">Sign In</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Welcome to E-Book platform!</h1>
+            <p>It is our pleasure to have you here on E-Book platform. I would like to tell you that you have made right choice of  adventure and explore a lot of knowledge. You may continue journey of adventure with us by joining a thousands of global readers. Create account if you don't have any by Sign Up, otherwise Sign In.<br>You are most welcome once again.</p>
+            <div class="btn">
+                <button id="form-sp"><span></span>Sign Up</button>
+                <button id="form-sn"><span></span>Sign In</button>
+            </div>
+        </div>
+        <div class="signup-cont">
+            <div class="signup-form">
+            <h1>Register form</h1>
+                <form action="signup" method="post">
+
+                    {% csrf_token %}
+
+                    <div class="names" style="display: flex; justify-content: space-between;">
+                        <div class="name1" style="width: 50%;">
+                            <label for="fname">First Name</label><br>
+                            <input type="text" name="firstName" id="fname" placeholder="ex: Alex">
+                        </div class="name2" style="width: 50%;">
+                        <div>
+                            <label for="sname">Second Name</label><br>
+                            <input type="text" name="secondName" id="sname" placeholder="ex: NJUGA">
+                        </div>
+                    </div>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                            <option disabled="disabled" selected>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                    </select>
+                    <label for="phone">Phone Number</label>
+                    <input type="number" name="phoneNumber" id="phone" placeholder="ex: 0788532100">
+                    <label for="nid">National ID</label>
+                    <input type="number" name="national_ID" id="nid" placeholder="ex: 119980289019062">
+                    <label for="mail">Email</label>
+                    <input type="email" name="email" id="mail" placeholder="ex: info@babusoft.rw">
+                    <label for="passw1">Password</label>
+                    <input type="password" name="password" id="passw1" placeholder="Password">
+                    <label for="passw2">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="passw2" placeholder="Confirm Password">
+                    {% for message in messages %}
+                    <p class="lg-msg">{{ message }}</p>
+                    {% endfor %}
+                    <div class="signup-btn">
+                        <button id="spcancel"><span></span>Cancel</button>
+                        <button id="signup"><span></span>Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="signin-cont">
+            <div class="signin-form">
+                <h1>Sign In form</h1>
+                <form action="signin" method="post">
+
+                    {% csrf_token %}
+                    
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
+                    <label for="passw">Password</label>
+                    <input type="password" name="passw" id="passw" placeholder="Password">
+                    <p class="lg-msg">Logout successful</p>
+                    <div class="signin-btn">
+                        <button id="sncancel"><span></span>Cancel</button>
+                        <button id="signin"><span></span>Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--div class="done"></div-->
+        <div class="footer">
+            &copy;<script>document.write(new Date().getFullYear())</script>. All right reserved by <strong>babuSoft</strong>
+        </div>
+        <script src="{% static 'js/ind.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title id="title">Borrow | e-Books</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style/bor.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/></a>
+                <p class="lg-p">e-Book</p>
+            </div>
+            <div class="ad-pro">
+                <img src="{% static 'images/photo.jpg' %}"/>
+                <p class="ad-name">Admin</p>
+            </div>
+            <div class="h-site">
+                <img src="{% static 'icon/arr.png' %}"/>
+                <a href="{% url 'index' %}">View site</a>
+            </div>
+            <ul>
+                <li><a href="admin.html"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
+                <li><a href="book.html"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
+                <li><a href="user.html"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
+                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
+            </ul>
+            <div class="footer">
+                &copy;<script>document.write(new Date().getFullYear())</script>. E-Book Platform by <strong>babuSoft</strong>
+            </div>
+        </div>
+        <div class="bg-admin">
+            <div class="container">
+                <div class="bg-title">
+                    <h1 class="bg-h">Borrowed Books</h1>
+                </div>
+                <div class="table-div">
+                    <table cellspacing="0" width="100%" border="1">
+                        <tr>
+                            <th>#</th>
+                            <th>User_fullName</th>
+                            <th>User_ID</th>
+                            <th>Book_Name</th>
+                            <th>OutDate</th>
+                            <th>ReturnDate</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>NJUGA Alex</td>
+                            <td>1199880087009062</td>
+                            <td>Book1</td>
+                            <td>04/12/2022</td>
+                            <td>10/12/2022</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>BORA Alain</td>
+                            <td>0788456445</td>>
+                            <td>Book2</td>
+                            <td>01/12/2022</td>
+                            <td>07/12/2022</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>TURIMO Abi</td>
+                            <td>1199480087009068</td>
+                            <td>Book3</td>
+                            <td>05/12/2022</td>
+                            <td>11/12/2022</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>MABANO Thierry</td>
+                            <td>1199080087009057</td>
+                            <td>Book4</td>
+                            <td>03/12/2022</td>
+                            <td>09/12/2022</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>HIRWA Muel</td>
+                            <td>1200080087009082</td>
+                            <td>Book5</td>
+                            <td>02/12/2022</td>
+                            <td>08/12/2022</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-form">
+                <h1><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/>Log In</h1>
+                <form action="" method="post">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
+                    <label for="passw">Password</label>
+                    <input type="password" name="passw" id="passw" placeholder="Password">
+                    <p class="lg-msg">Logout successful</p>
+                    <div class="login-btn">
+                        <button id="loginbtn"><span></span>Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="{% static 'js/bor.js' %}"></script>
+    </body>
+</html>

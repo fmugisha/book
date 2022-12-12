@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title id="title">Users | e-Books</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style/user.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/></a>
+                <p class="lg-p">e-Book</p>
+            </div>
+            <div class="ad-pro">
+                <img src="{% static 'images/photo.jpg' %}"/>
+                <p class="ad-name">Admin</p>
+            </div>
+            <div class="h-site">
+                <img src="{% static 'icon/arr.png' %}"/>
+                <a href="{% url 'index' %}">View site</a>
+            </div>
+            <ul>
+                <li><a href="{% url 'admin'%}"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
+                <li><a href="{% url 'books' %}"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
+                <li><a href="{% url 'users' %}"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
+                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
+            </ul>
+            <div class="footer">
+                &copy;<script>document.write(new Date().getFullYear())</script>. E-Book Platform by <strong>babuSoft</strong>
+            </div>
+        </div>
+        <div class="bg-admin">
+            <div class="container">
+                <div class="bg-title">
+                    <h1 class="bg-h">Global readers</h1>
+                </div>
+                <div class="table-div">
+                    <table cellspacing="0" width="100%" border="1">
+                        <tr>
+                            <th>#</th>
+                            <th>User_fname</th>
+                            <th>User_sname</th>
+                            <th>User_Gender</th>
+                            <th>User_email</th>
+                            <th>User_phone</th>
+                            <th>User_ID</th>
+                            <th>Role</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>NJUGA</td>
+                            <td>Alex</td>
+                            <td>Male</td>
+                            <td>alex@gmail.com</td>
+                            <td>0782320231</td>
+                            <td>1199880087009062</td>
+                            <td><input type="checkbox" name="role"/></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>BORA</td>
+                            <td>Alain</td>
+                            <td>Male</td>
+                            <td>alain@hotmail.com</td>
+                            <td>0788456445</td>
+                            <td>1199980087009063</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>TURIMO</td>
+                            <td>Abi</td>
+                            <td>Female</td>
+                            <td>abi@gmail.com</td>
+                            <td>0722778878</td>
+                            <td>1199480087009068</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>MABANO</td>
+                            <td>Thierry</td>
+                            <td>Male</td>
+                            <td>thierry10@yahoo.fr</td>
+                            <td>0788888555</td>
+                            <td>1199080087009057</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>HIRWA</td>
+                            <td>Muel</td>
+                            <td>Male</td>
+                            <td>muel@gmail.com</td>
+                            <td>0790788777</td>
+                            <td>1200080087009082</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-form">
+                <h1><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/>Log In</h1>
+                <form action="" method="post">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
+                    <label for="passw">Password</label>
+                    <input type="password" name="passw" id="passw" placeholder="Password">
+                    <p class="lg-msg">Logout successful</p>
+                    <div class="login-btn">
+                        <button id="loginbtn"><span></span>Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="{% static 'js/user.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title id="title">Dashboard | e-Books</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style/ad.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/></a>
+                <p class="lg-p">e-Book</p>
+            </div>
+            <div class="ad-pro">
+                <img src="{% static 'images/photo.jpg' %}"/>
+                <p class="ad-name">Admin</p>
+            </div>
+            <div class="h-site">
+                <img src="{% static 'icon/arr.png' %}"/>
+                <a href="{% url 'index' %}">View site</a>
+            </div>
+            <ul>
+                <li><a href="{% url 'admin'%}"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
+                <li><a href="{% url 'books' %}"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
+                <li><a href="{% url 'users' %}"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
+                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
+            </ul>
+            <div class="footer">
+                &copy;<script>document.write(new Date().getFullYear())</script>. E-Book Platform by <strong>babuSoft</strong>
+            </div>
+        </div>
+        <div class="bg-admin">
+            <div class="ad-hd">
+                <p class="hd-p">Welcome back again, Admin</p>
+            </div>
+            <div class="ad-bd">
+                <div class="bk bk-tb">
+                    <h1 class="bk-h">Total Books</h1>
+                    <p class="bk-p">25</p>
+                </div>
+                <div class="bk bk-tr">
+                    <h1 class="bk-h">Total Borrowed</h1>
+                    <p class="bk-p">12</p>
+                </div>
+                <div class="bk bk-mr">
+                    <h1 class="bk-h">Most Borrowed</h1>
+                    <p class="bk-p">Magic of Thinking Big</p>
+                </div>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-form">
+                <h1><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/>Log In</h1>
+                <form action="" method="post">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
+                    <label for="passw">Password</label>
+                    <input type="password" name="passw" id="passw" placeholder="Password">
+                    <p class="lg-msg">Logout successful</p>
+                    <div class="login-btn">
+                        <button id="loginbtn"><span></span>Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="{% static 'js/ad.js' %}"></script>
+    </body>
+</html>

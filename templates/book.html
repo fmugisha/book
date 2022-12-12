@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title id="title">Books | e-Books</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style/bk.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/></a>
+                <p class="lg-p">e-Book</p>
+            </div>
+            <div class="ad-pro">
+                <img src="{% static 'images/photo.jpg' %}"/>
+                <p class="ad-name">Admin</p>
+            </div>
+            <div class="h-site">
+                <img src="{% static 'icon/arr.png' %}"/>
+                <a href="{% url 'index' %}">View site</a>
+            </div>
+            <ul>
+                <li><a href="{% url 'admin'%}"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
+                <li><a href="{% url 'books' %}"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
+                <li><a href="{% url 'users' %}"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
+                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
+            </ul>
+            <div class="footer">
+                &copy;<script>document.write(new Date().getFullYear())</script>. E-Book Platform by <strong>babuSoft</strong>
+            </div>
+        </div>
+        <div class="bg-admin">
+            <div class="container">
+                <div class="bg-title">
+                    <h1 class="bg-h">Library Books</h1>
+                    <button class="add">Add button &plus;</button>
+                </div>
+                <div class="table-div">
+                    <table cellspacing="0" width="100%">
+                        <tr>
+                            <th>#</th>
+                            <th>Book_Name</th>
+                            <th>Book_Author</th>
+                            <th>Book_Total</th>
+                            <th>Book_Rent</th>
+                            <th>Book_Remain</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Book1</td>
+                            <td>Alex Njuga</td>
+                            <td>43</td>
+                            <td>25</td>
+                            <td>18</td>
+                            <td class="t-btn">
+                                <button class="row-id">Edit</button>
+                                <button class="row-del">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Book2</td>
+                            <td>Alex Njuga</td>
+                            <td>32</td>
+                            <td>20</td>
+                            <td>12</td>
+                            <td class="t-btn">
+                                <button class="row-id">Edit</button>
+                                <button class="row-del">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Book3</td>
+                            <td>Alex Njuga</td>
+                            <td>47</td>
+                            <td>15</td>
+                            <td>32</td>
+                            <td class="t-btn">
+                                <button class="row-id">Edit</button>
+                                <button class="row-del">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Book4</td>
+                            <td>Alex Njuga</td>
+                            <td>89</td>
+                            <td>45</td>
+                            <td>44</td>
+                            <td class="t-btn">
+                                <button class="row-id">Edit</button>
+                                <button class="row-del">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Book5</td>
+                            <td>Alex Njuga</td>
+                            <td>12</td>
+                            <td>5</td>
+                            <td>7</td>
+                            <td class="t-btn">
+                                <button class="row-id">Edit</button>
+                                <button class="row-del">Delete</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bk-form-cont">
+            <div class="bk-form">
+                <button class="bk-btn" id="bk-id">&times;</button>
+                <h1>Add Book</h1>
+                <form action="" method="post">
+                    <label for="bname">Book Name</label>
+                    <input type="text" name="bname" id="bname" placeholder="type book name here!">
+                    <label for="bdesc">Book Description</label>
+                    <input type="text" name="bdesc" id="bdesc" placeholder="book description">
+                    <label for="bauthor">Book Author</label>
+                    <input type="text" name="bauthor" id="bauthor" placeholder="book author">
+                    <label for="bnum">Book Numbers</label>
+                    <input type="bnum" name="bnum" id="bnum" placeholder="total numbers of book">
+                    <p class="sbt-msg">Added successful</p>
+                    <div class="lg-btn">
+                        <button href="#" id="sbt"><span></span>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-form">
+                <h1><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/>Log In</h1>
+                <form action="" method="post">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
+                    <label for="passw">Password</label>
+                    <input type="password" name="passw" id="passw" placeholder="Password">
+                    <p class="lg-msg">Logout successful</p>
+                    <div class="login-btn">
+                        <button id="loginbtn"><span></span>Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="{% static 'js/bk.js' %}"></script>
+    </body>
+</html>

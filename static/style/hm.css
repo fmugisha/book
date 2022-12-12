@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: revert-layer;
+    font-style: italic;
+    color: #000;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    margin: auto;
+    width: 80%;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lg {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 5vw;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul .nav:hover::after {
+    width: 100%;
+}
+
+.nav-cont {
+    display: flex;
+}
+
+.nav-cont .navpro {
+    display: flex;
+}
+
+.navpro img {
+    width: 100%;
+    height: 100%;
+    max-width: 4vw;
+    max-height: auto;
+    border: 1px solid rgb(91, 68, 110);
+    border-radius: 50%;
+    margin: 0 0 0 10px;
+    transform: translateY(-35%);
+}
+
+.container {
+    width: 96%;
+    height: auto;
+    margin: 0 2% 2% 2%;
+    padding: 0.5% 5%;
+}
+
+.container .book-cont {
+    position: relative;
+    margin: 2%;
+    width: 20%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0;
+    float: left;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 25px;
+    margin: 2% 0;
+    text-decoration: underline;
+}
+
+.container .book-cont .b-ph {
+    width: 100%;
+    height: 60%;
+}
+
+.book-cont .b-ph img {
+    width: 100%;
+    height: 100%;
+}
+
+.b-info {
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.b-info a {
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 0;
+}
