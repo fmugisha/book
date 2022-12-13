@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'book_site.apps.BookSiteConfig',
     'home',
     'admin_site',
+    'books',
+    'users',
 ]
 
 MIDDLEWARE = [

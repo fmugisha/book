@@ -60,12 +60,9 @@
                             <td>0{{ user.phoneNumber }}</td>
                             <td>{{ user.national_ID }}</td>
                             <td>
-                                <form id="change" action="" method="post">
-                                    {% if user.role == True %}
-                                    <input type="checkbox" name="role" value="False" checked />
-                                    {% else %}
-                                    <input type="checkbox" name="role" value="True" />
-                                    {% endif %}
+                                <form id="change" action="change" method="post">
+                                    <input type="checkbox" name="role" id="role" {% if user.role %} checked {% endif %} onclick="change()"/>
+                                    <input type="submit" value="Save" id="save"/>
                                 </form>
                             </td>
                         </tr>

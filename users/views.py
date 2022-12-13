@@ -1,12 +1,6 @@
 from django.shortcuts import render, redirect
 from book_site.models import User
 
-def admin(request):
-    return render(request, 'admin.html')
-
-def books(request):
-    return render(request, 'book.html')
-
 def users(request):
     user = User.objects.all()
 
@@ -14,13 +8,16 @@ def users(request):
 
     return render(request, 'user.html', data)
 
-def change(request):
+def change(request, pk):
 
     if request.method == "POST":
         role = request.POST['role']
-        if role == True:
-            role = False
-        else:
+        if role.checked:
+            role.update = False
+            role.save();
+        elif role == False:
             role = True
+            role.save();
+
 
     return redirect('/')

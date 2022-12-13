@@ -176,6 +176,13 @@ td, th {
     width: auto;
 }
 
+#save {
+    display: none;
+    width: 40px;
+    height: auto;
+    background-color: green;
+}
+
 .login {
     display: none;
     position: absolute;
