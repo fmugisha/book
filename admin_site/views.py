@@ -14,4 +14,6 @@ def books(request):
 def users(request):
     user = User.objects.all()
 
-    return render(request, 'user.html', {'name': user})
+    data = {'name': user}
+
+    return render(request, 'user.html', data)

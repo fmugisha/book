@@ -44,25 +44,33 @@
                     <table cellspacing="0" width="100%" border="1">
                         <tr>
                             <th>#</th>
-                            <th>User_fname</th>
-                            <th>User_sname</th>
+                            <th>User_fullName</th>
                             <th>User_Gender</th>
                             <th>User_email</th>
                             <th>User_phone</th>
                             <th>User_ID</th>
                             <th>Role</th>
                         </tr>
+                        {% for user in name %}
                         <tr>
-                            <td>1</td>
-                            <td>NJUGA</td>
-                            <td>Alex</td>
-                            <td>Male</td>
-                            <td>alex@gmail.com</td>
-                            <td>0782320231</td>
-                            <td>1199880087009062</td>
-                            <td><input type="checkbox" name="role"/></td>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.firstName }} {{ user.secondName }}</td>
+                            <td>{{ user.gender }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>0{{ user.phoneNumber }}</td>
+                            <td>{{ user.national_ID }}</td>
+                            <td>
+                                <form id="change" action="" method="post">
+                                    {% if user.role == True %}
+                                    <input type="checkbox" name="role" value="False" checked />
+                                    {% else %}
+                                    <input type="checkbox" name="role" value="True" />
+                                    {% endif %}
+                                </form>
+                            </td>
                         </tr>
-                        <tr>
+                        {% endfor %}
+                        <!--tr>
                             <td>2</td>
                             <td>BORA</td>
                             <td>Alain</td>
@@ -97,7 +105,7 @@
                             <td>muel@gmail.com</td>
                             <td>0790788777</td>
                             <td>1200080087009082</td>
-                        </tr>
+                        </tr-->
                     </table>
                 </div>
             </div>
