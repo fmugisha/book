@@ -177,7 +177,6 @@ td, th {
 }
 
 #save {
-    display: none;
     width: 40px;
     height: auto;
     background-color: green;

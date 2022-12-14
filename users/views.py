@@ -8,16 +8,12 @@ def users(request):
 
     return render(request, 'user.html', data)
 
-def change(request, pk):
-
+def change(request, id):
+    admin = User.objects.get(id=id)
     if request.method == "POST":
-        role = request.POST['role']
-        if role.checked:
-            role.update = False
-            role.save();
-        elif role == False:
-            role = True
-            role.save();
-
-
+        if User.role == True:
+            User.role = False
+        elif User.role == False:
+            User.role = True
+    admin.save();
     return redirect('/')

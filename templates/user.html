@@ -61,6 +61,7 @@
                             <td>{{ user.national_ID }}</td>
                             <td>
                                 <form id="change" action="change" method="post">
+                                    {% csrf_token %}
                                     <input type="checkbox" name="role" id="role" {% if user.role %} checked {% endif %} onclick="change()"/>
                                     <input type="submit" value="Save" id="save"/>
                                 </form>
