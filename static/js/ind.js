@@ -3,9 +3,6 @@ const signin1 = document.getElementById("nav-sn");
 const signup2 = document.getElementById("form-sp");
 const signin2 = document.getElementById("form-sn");
 
-const signUp = document.getElementById("signup");
-const signIn = document.getElementById("signin");
-
 const cancel1 = document.getElementById("spcancel");
 const cancel2 = document.getElementById("sncancel");
 
@@ -55,8 +52,3 @@ cancel2.addEventListener('click', (e) => {
     bgcontent.style.filter = 'blur(0)';
     tname.innerHTML = "Welcome | e-Books";
 });
-/*
-signUp.addEventListener('click', () => {
-    bgnav.style.filter = 'blur(3px)';
-    bgcontent.style.filter = 'blur(3px)';
-})*/

@@ -75,15 +75,17 @@
         <div class="signin-cont">
             <div class="signin-form">
                 <h1>Sign In form</h1>
-                <form action="signin" method="post">
+                <form action="signin" method="post" autocomplete="off">
 
                     {% csrf_token %}
                     
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw" autocomplete="off"/>
                     <label for="passw">Password</label>
-                    <input type="password" name="passw" id="passw" placeholder="Password">
-                    <p class="lg-msg">Logout successful</p>
+                    <input type="password" name="passw" id="passw" placeholder="Password" autocomplete="off"/>
+                    {% for msg in messages %}
+                    <p class="lg-msg">{{ msg }}</p>
+                    {% endfor %}
                     <div class="signin-btn">
                         <button id="sncancel"><span></span>Cancel</button>
                         <button id="signin"><span></span>Sign In</button>

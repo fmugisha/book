@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,21 +7,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Home | Books</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style/hm.css" type="text/css">
-        <link rel="icon" href="images/lb.png" type="image/png">
+        <link rel="stylesheet" href="{% static 'style/hm.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
     </head>
     <body>
         <div class="navbar">
-            <a href="home.html"><img src="../images/lb.png" alt="logo" class="lg"/></a>
+            <a href="home.html"><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/></a>
             <div class="nav-cont">
                 <ul>
                     <li class="nav"><a href="#">Home</a></li>
                     <li class="nav"><a href="#">My Books</a></li>
-                    <li class="nav"><a href="index.html">Sign Out</a></li>
+                    <li class="nav"><a href="#">Sign Out</a></li>
                 </ul>
                 <div class="navpro">
                     <p class="hwrd">Hello, User</p>
-                    <img src="../images/photo.jpg"/>
+                    <img src="{% static 'images/photo.jpg' %}"/>
                 </div>
             </div>
         </div>
@@ -27,7 +29,7 @@
             <h1>Books</h1>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b1.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b1.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -35,7 +37,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b4.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b4.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -43,7 +45,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b5.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b5.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -51,7 +53,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -59,7 +61,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -67,7 +69,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -75,7 +77,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -83,7 +85,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -91,7 +93,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -99,7 +101,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b23.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b23.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -107,7 +109,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -115,7 +117,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
@@ -123,7 +125,7 @@
             </div>
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="../images/b14.jpg" alt="book-photo" id="bk-img">
+                    <img src="{% static 'images/b14.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>

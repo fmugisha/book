@@ -60,50 +60,14 @@
                             <td>0{{ user.phoneNumber }}</td>
                             <td>{{ user.national_ID }}</td>
                             <td>
-                                <form id="change" action="change" method="post">
+                                <form id="change" action="change/{{ user.id }}/" method="post">
                                     {% csrf_token %}
-                                    <input type="checkbox" name="role" id="role" {% if user.role %} checked {% endif %} onclick="change()"/>
-                                    <input type="submit" value="Save" id="save"/>
+                                    <!--input type="checkbox" name="role" class="role" {% if user.role %} checked {% endif %} /-->
+                                    <input type="submit" {% if user.role == True %} value="Admin" {% elif user.role == False %} value="User" {% endif %} id="save"/>
                                 </form>
                             </td>
                         </tr>
                         {% endfor %}
-                        <!--tr>
-                            <td>2</td>
-                            <td>BORA</td>
-                            <td>Alain</td>
-                            <td>Male</td>
-                            <td>alain@hotmail.com</td>
-                            <td>0788456445</td>
-                            <td>1199980087009063</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>TURIMO</td>
-                            <td>Abi</td>
-                            <td>Female</td>
-                            <td>abi@gmail.com</td>
-                            <td>0722778878</td>
-                            <td>1199480087009068</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>MABANO</td>
-                            <td>Thierry</td>
-                            <td>Male</td>
-                            <td>thierry10@yahoo.fr</td>
-                            <td>0788888555</td>
-                            <td>1199080087009057</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>HIRWA</td>
-                            <td>Muel</td>
-                            <td>Male</td>
-                            <td>muel@gmail.com</td>
-                            <td>0790788777</td>
-                            <td>1200080087009082</td>
-                        </tr-->
                     </table>
                 </div>
             </div>
