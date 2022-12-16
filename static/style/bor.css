@@ -163,6 +163,17 @@ body {
     margin-top: 5%;
 }
 
+.container .add {
+    width: 15%;
+    font-size: 15px;
+    padding: 1%;
+    margin-left: 20%;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 255, 0.322);
+    cursor: pointer;
+}
+
 th {
     text-align: center;
     width: 100%;
@@ -174,6 +185,115 @@ td, th {
     font-size: 20px;
     padding: 10px;
     width: auto;
+}
+
+.bk-form-cont {
+    display: none;
+    position: absolute;
+    width: 25%;
+    height: 96%;
+    margin-top: 1%;
+    transform: translateX(290%);
+    background-color: rgba(25, 211, 133, 0.95);
+    border-radius: 10px;
+    animation: bk-display 0.05s;
+}
+
+@keyframes bk-display {
+    0% {
+        transform: translateX(300%);
+    }
+    100% {
+        transform: translateX(290%);
+    }
+}
+
+.bk-form h1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.bk-btn {
+    border: none;
+    font-size: 25px;
+    margin-left: 5%;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.bk-form {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.bk-form form {
+    padding: 2% 8%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.bk-form form label {
+    margin-top: 5%;
+    font-size: 17px;
+}
+
+.bk-form form input{
+    height: 50px;
+    padding-left: 3%;
+    font-size: 15px;
+    outline: none;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.bk-form .lg-btn button {
+    position: relative;
+    width: 200px;
+    padding: 15px 0;
+    margin: 20px 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #000;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.bk-form .lg-btn button span {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    width: 0;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.bk-form .lg-btn button:hover span {
+    width: 100%;
+}
+
+.bk-form .lg-btn button:hover {
+    border: none;
+}
+
+.bk-form .lg-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.sbt-msg {
+    display: none;
+    text-align: center;
+    padding-top: 2%;
+    color: rgba(0, 128, 0, 0.678);
+    font-size: 16px;
 }
 
 .login {

@@ -34,13 +34,13 @@ def signup(request):
         return redirect('/')
 
 def signin(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         email = request.POST['email']
         password = request.POST['passw']
         
         user = authenticate(request, email=email, password=password)
 
-        if user is not None:
+        if user is None:
             login(request, user)
             return redirect('home')
         else:

@@ -59,9 +59,9 @@
                     <label for="mail">Email</label>
                     <input type="email" name="email" id="mail" placeholder="ex: info@babusoft.rw">
                     <label for="passw1">Password</label>
-                    <input type="password" name="password" id="passw1" placeholder="Password">
+                    <input type="password" name="password" id="passw1" placeholder="Password" autocomplete="on">
                     <label for="passw2">Confirm Password</label>
-                    <input type="password" name="confirmPassword" id="passw2" placeholder="Confirm Password">
+                    <input type="password" name="confirmPassword" id="passw2" placeholder="Confirm Password" autocomplete="on">
                     {% for message in messages %}
                     <p class="lg-msg">{{ message }}</p>
                     {% endfor %}
@@ -75,14 +75,14 @@
         <div class="signin-cont">
             <div class="signin-form">
                 <h1>Sign In form</h1>
-                <form action="signin" method="post" autocomplete="off">
+                <form action="signin" method="post">
 
                     {% csrf_token %}
                     
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw" autocomplete="off"/>
+                    <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw"/>
                     <label for="passw">Password</label>
-                    <input type="password" name="passw" id="passw" placeholder="Password" autocomplete="off"/>
+                    <input type="password" name="passw" id="passw" placeholder="Password" autocomplete="on"/>
                     {% for msg in messages %}
                     <p class="lg-msg">{{ msg }}</p>
                     {% endfor %}
@@ -96,7 +96,7 @@
         <!--div class="done"></div-->
         <div class="footer">
             &copy;<script>document.write(new Date().getFullYear())</script>. All right reserved by <strong>babuSoft</strong>
-        </div>
+        </di>
         <script src="{% static 'js/ind.js' %}"></script>
     </body>
 </html>

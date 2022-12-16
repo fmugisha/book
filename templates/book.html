@@ -28,7 +28,7 @@
                 <li><a href="{% url 'admin'%}"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
                 <li><a href="{% url 'books' %}"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
                 <li><a href="{% url 'users' %}"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
-                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="{% url 'borrowed' %}"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
                 <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
             </ul>
             <div class="footer">
@@ -48,23 +48,25 @@
                             <th>Book_Name</th>
                             <th>Book_Author</th>
                             <th>Book_Total</th>
-                            <th>Book_Rent</th>
-                            <th>Book_Remain</th>
+                            <!--th>Book_Borrowed</th>
+                            <th>Book_Remain</th-->
                             <th>Action</th>
                         </tr>
+                        {% for book in books %}
                         <tr>
-                            <td>1</td>
-                            <td>Book1</td>
-                            <td>Alex Njuga</td>
-                            <td>43</td>
-                            <td>25</td>
-                            <td>18</td>
+                            <td>{{ book.id }}</td>
+                            <td>{{ book.bookName }}</td>
+                            <td>{{ book.bookAuthor }}</td>
+                            <td>{{ book.bookTotal }}</td>
+                            <!--td>25</td>
+                            <td>18</td-->
                             <td class="t-btn">
-                                <button class="row-id">Edit</button>
-                                <button class="row-del">Delete</button>
+                                <a href="edit/{{ book.id }}" class="row-id">Edit</a>
+                                <a href="delete/{{ book.id }}" class="row-del">Delete</a>
                             </td>
                         </tr>
-                        <tr>
+                        {% endfor %}
+                        <!--tr>
                             <td>2</td>
                             <td>Book2</td>
                             <td>Alex Njuga</td>
@@ -111,7 +113,7 @@
                                 <button class="row-id">Edit</button>
                                 <button class="row-del">Delete</button>
                             </td>
-                        </tr>
+                        </tr-->
                     </table>
                 </div>
             </div>
@@ -120,15 +122,20 @@
             <div class="bk-form">
                 <button class="bk-btn" id="bk-id">&times;</button>
                 <h1>Add Book</h1>
-                <form action="" method="post">
+                <form action="book_store" method="post">
+
+                    {% csrf_token %}
+                    
                     <label for="bname">Book Name</label>
                     <input type="text" name="bname" id="bname" placeholder="type book name here!">
-                    <label for="bdesc">Book Description</label>
-                    <input type="text" name="bdesc" id="bdesc" placeholder="book description">
                     <label for="bauthor">Book Author</label>
                     <input type="text" name="bauthor" id="bauthor" placeholder="book author">
+                    <label for="bdesc">Book Description</label>
+                    <input type="text" name="bdesc" id="bdesc" placeholder="book description">
                     <label for="bnum">Book Numbers</label>
-                    <input type="bnum" name="bnum" id="bnum" placeholder="total numbers of book">
+                    <input type="number" name="bnum" id="bnum" placeholder="total numbers of book">
+                    <label for="bimg">Book Image</label>
+                    <input type="file" name="bimg" id="bimg" placeholder="type book name here!">
                     <p class="sbt-msg">Added successful</p>
                     <div class="lg-btn">
                         <button href="#" id="sbt"><span></span>Submit</button>

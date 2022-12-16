@@ -264,12 +264,23 @@ td, th {
 }
 
 .bk-form form label {
-    margin-top: 10%;
+    margin-top: 5%;
     font-size: 17px;
 }
 
-.bk-form form input{
+.bk-form form input {
     height: 50px;
+    padding-left: 3%;
+    font-size: 15px;
+    outline: none;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.bk-form form input[type="file"] {
+    height: 30px;
     padding-left: 3%;
     font-size: 15px;
     outline: none;

@@ -27,15 +27,17 @@
         </div>
         <div class="container">
             <h1>Books</h1>
+            {% for book in books %}
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="{% static 'images/b1.jpg' %}" alt="book-photo" id="bk-img">
+                    <img src="{{ book.bookImage.url }}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
-                    <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
+                    <div class="b-name"><a href="#">{{ book.bookName }}</a></div>
                 </div>
             </div>
-            <div class="book-cont">
+            {% endfor %}
+            <!--div class="book-cont">
                 <div class="b-ph">
                     <img src="{% static 'images/b4.jpg' %}" alt="book-photo" id="bk-img">
                 </div>
@@ -130,7 +132,7 @@
                 <div class="b-info">
                     <div class="b-name"><a href="#">THE SOVEREIGN INDIVIDUAL</a></div>
                 </div>
-            </div>
+            </div-->
         </div>
         <div class="footer">
             &copy;<script>document.write(new Date().getFullYear())</script>. All right reserved by <strong>babuSoft</strong>

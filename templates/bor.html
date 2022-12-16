@@ -25,10 +25,10 @@
                 <a href="{% url 'index' %}">View site</a>
             </div>
             <ul>
-                <li><a href="admin.html"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
-                <li><a href="book.html"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
-                <li><a href="user.html"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
-                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="{% url 'admin'%}"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
+                <li><a href="{% url 'books' %}"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
+                <li><a href="{% url 'users' %}"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
+                <li><a href="{% url 'borrowed' %}"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
                 <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
             </ul>
             <div class="footer">
@@ -39,6 +39,7 @@
             <div class="container">
                 <div class="bg-title">
                     <h1 class="bg-h">Borrowed Books</h1>
+                    <button class="add">Add button &plus;</button>
                 </div>
                 <div class="table-div">
                     <table cellspacing="0" width="100%" border="1">
@@ -58,10 +59,10 @@
                             <td>04/12/2022</td>
                             <td>10/12/2022</td>
                         </tr>
-                        <tr>
+                        <!--tr>
                             <td>2</td>
                             <td>BORA Alain</td>
-                            <td>0788456445</td>>
+                            <td>1199880082009064</td>>
                             <td>Book2</td>
                             <td>01/12/2022</td>
                             <td>07/12/2022</td>
@@ -89,9 +90,34 @@
                             <td>Book5</td>
                             <td>02/12/2022</td>
                             <td>08/12/2022</td>
-                        </tr>
+                        </tr-->
                     </table>
                 </div>
+            </div>
+        </div>
+        <div class="bk-form-cont">
+            <div class="bk-form">
+                <button class="bk-btn" id="bk-id">&times;</button>
+                <h1>Add Book</h1>
+                <form action="" method="post">
+
+                    {% csrf_token %}
+                    
+                    <label for="uname">User FullName</label>
+                    <input type="text" name="name" id="uname" placeholder="type User full name here!">
+                    <label for="userId">User ID</label>
+                    <input type="number" name="userID" id="userId" placeholder="1199080087009057">
+                    <label for="bauthor">Book Name</label>
+                    <input type="text" name="book" id="book" placeholder="type book name here!">
+                    <label for="outDate">Out Date</label>
+                    <input type="text" name="outDate" id="outDate" placeholder="total numbers of book">
+                    <label for="rDate">Returned Date</label>
+                    <input type="text" name="rDate" id="rDate" placeholder="total numbers of book">
+                    <p class="sbt-msg">Added successful</p>
+                    <div class="lg-btn">
+                        <button href="#" id="sbt"><span></span>Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="login">
@@ -101,7 +127,7 @@
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="ex: info@babusoft.rw">
                     <label for="passw">Password</label>
-                    <input type="password" name="passw" id="passw" placeholder="Password">
+                    <input type="password" name="passw" id="passw" placeholder="Password" autocomplete="on">
                     <p class="lg-msg">Logout successful</p>
                     <div class="login-btn">
                         <button id="loginbtn"><span></span>Sign In</button>

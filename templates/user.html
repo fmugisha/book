@@ -28,7 +28,7 @@
                 <li><a href="{% url 'admin'%}"><img src="{% static 'icon/hm.png' %}" class="ad-icon">Dashboard</a></li>
                 <li><a href="{% url 'books' %}"><img src="{% static 'icon/bk.png' %}" class="ad-icon">Books</a></li>
                 <li><a href="{% url 'users' %}"><img src="{% static 'icon/usr.png' %}" class="ad-icon">Users</a></li>
-                <li><a href="bor.html"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
+                <li><a href="{% url 'borrowed' %}"><img src="{% static 'icon/bout.png' %}" class="ad-icon">Borrow books</a></li>
                 <li><a href="#" class="logout"><img src="{% static 'icon/lg.png' %}" class="ad-icon">Logout</a></li>
             </ul>
             <div class="footer">
