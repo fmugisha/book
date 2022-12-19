@@ -152,7 +152,9 @@ body {
 }
 
 .bg-admin .container .bg-title {
-    margin: 1%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 .bg-admin .container .bg-title h1 {

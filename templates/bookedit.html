@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title id="title">Books | e-Books</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'style/bk.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'style/bkedit.css' %}" type="text/css">
         <link rel="icon" href="{% static 'images/lb.png' %}" type="image/png">
     </head>
     <body>
@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="bg-title">
                     <h1 class="bg-h">Library Books</h1>
-                    <!--button class="add">Add Book &plus;</button-->
+                    <button class="add">Add button &plus;</button>
                 </div>
                 <div class="table-div">
                     <table cellspacing="0" width="100%">
@@ -50,7 +50,7 @@
                             <th>Book_Total</th>
                             <!--th>Book_Borrowed</th>
                             <th>Book_Remain</th-->
-                            <th id="action">Action</th>
+                            <th>Action</th>
                         </tr>
                         {% for book in books %}
                         <tr>
@@ -61,8 +61,8 @@
                             <!--td>25</td>
                             <td>18</td-->
                             <td class="t-btn">
-                                <a href="/edit/{{ book.id }}/" class="actionBtn row-id">Edit</a>
-                                <a href="delete/{{ book.id }}" class="actionBtn row-del">Delete</a>
+                                <a href="/edit/{{ book.id }}" class="row-id">Edit</a>
+                                <a href="delete/{{ book.id }}" class="row-del">Delete</a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -70,13 +70,12 @@
                 </div>
             </div>
         </div>
-        <!--
         {% if bookedit %}
-        <div class="bk-form-cont">
+        <div class="bk-form-cont-edit">
             <div class="bk-form">
-                <a href="{% url 'books' %}" class="bk-btn" id="bk-id">&times;</a>
-                <h1>Edit data</h1>
-                <form action="/editrecord/{{ bookedit.id }}/" method="post">
+                <button class="bk-btn" id="bk-id">&times;</button>
+                <h1>Add Book</h1>
+                <form action="/editrecord/{{ bookedit.id }}" method="post">
 
                     {% csrf_token %}
                     
@@ -92,13 +91,12 @@
                     <input type="file" name="eimage" id="eimg" value="{{ bookedit.bookImage }}">
                     <p class="sbt-msg"></p>
                     <div class="lg-btn">
-                        <button href="#" id="esbt"><span></span>Update</button>
+                        <button href="#" id="esbt"><span></span>Submit</button>
                     </div>
                 </form>
             </div>
         </div>
         {% else %}
-        -->
         <div class="bk-form-cont">
             <div class="bk-form">
                 <a href="{% url 'books' %}" class="bk-btn" id="bk-id">&times;</a>
@@ -124,7 +122,7 @@
                 </form>
             </div>
         </div>
-        <!--{% endif %}-->
+        {% endif %}
         <div class="login">
             <div class="login-form">
                 <h1><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/>Log In</h1>
@@ -140,6 +138,6 @@
                 </form>
             </div>
         </div>
-        <script src="{% static 'js/bk.js' %}"></script>
+        <script src="{% static 'js/bkedit.js' %}"></script>
     </body>
 </html>

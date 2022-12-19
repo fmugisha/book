@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from books.models import Books
 from django.contrib import messages
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+from django.template import loader
 
 def books(request):
 
@@ -38,4 +41,19 @@ def delete(request, id):
     return redirect('books')
 
 def edit(request, id):
+    edited = Books.objects.get(id=id)
+    context = {
+        'bookedit': edited,
+    }
+    return render(request, 'book.html', context)
+
+def editrecord(request, id):
+    edited = Books.objects.get(id=id)
+    edited.bookName = request.POST['ename']
+    edited.bookAuthor = request.POST['eauthor']
+    edited.bookDescription = request.POST['edesc']
+    edited.bookTotal = request.POST['enumber']
+    edited.bookImage = request.POST['eimage']
+    edited.save();
+
     return redirect('books')
