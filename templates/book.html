@@ -57,7 +57,7 @@
                             <td>{{ book.id }}</td>
                             <td>{{ book.bookName }}</td>
                             <td>{{ book.bookAuthor }}</td>
-                            <td>{{ book.bookTotal }}</td>
+                            <td class="total">{{ book.bookTotal }}</td>
                             <!--td>25</td>
                             <td>18</td-->
                             <td class="t-btn">
@@ -70,35 +70,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        {% if bookedit %}
-        <div class="bk-form-cont">
-            <div class="bk-form">
-                <a href="{% url 'books' %}" class="bk-btn" id="bk-id">&times;</a>
-                <h1>Edit data</h1>
-                <form action="/editrecord/{{ bookedit.id }}/" method="post">
-
-                    {% csrf_token %}
-                    
-                    <label for="bname">Book Name</label>
-                    <input type="text" name="ename" id="ename" value="{{ bookedit.bookName }}">
-                    <label for="bauthor">Book Author</label>
-                    <input type="text" name="eauthor" id="eauthor" value="{{ bookedit.bookAuthor }}">
-                    <label for="bdesc">Book Description</label>
-                    <input type="text" name="edesc" id="edesc" value="{{ bookedit.bookDescription }}">
-                    <label for="bnum">Book Numbers</label>
-                    <input type="number" name="enumber" id="enum" value="{{ bookedit.bookTotal }}">
-                    <label for="bimg">Book Image</label>
-                    <input type="file" name="eimage" id="eimg" value="{{ bookedit.bookImage }}">
-                    <p class="sbt-msg"></p>
-                    <div class="lg-btn">
-                        <button href="#" id="esbt"><span></span>Update</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        {% else %}
-        -->
         <div class="bk-form-cont">
             <div class="bk-form">
                 <a href="{% url 'books' %}" class="bk-btn" id="bk-id">&times;</a>
@@ -116,7 +87,7 @@
                     <label for="bnum">Book Numbers</label>
                     <input type="number" name="bnum" id="bnum" placeholder="total numbers of book">
                     <label for="bimg">Book Image</label>
-                    <input type="file" name="bimg" id="bimg" placeholder="type book name here!">
+                    <input type="file" name="img" id="bimg" placeholder="type book name here!">
                     <p class="sbt-msg">Added successful</p>
                     <div class="lg-btn">
                         <button href="#" id="sbt"><span></span>Submit</button>
@@ -124,7 +95,6 @@
                 </form>
             </div>
         </div>
-        <!--{% endif %}-->
         <div class="login">
             <div class="login-form">
                 <h1><img src="{% static 'images/lb.png' %}" alt="logo" class="lg"/>Log In</h1>

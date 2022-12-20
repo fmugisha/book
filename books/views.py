@@ -21,10 +21,10 @@ def book_store(request):
         bookAuthor = request.POST['bauthor']
         bookDescription = request.POST['bdesc']
         bookNumbers = request.POST['bnum']
-        bookImage = request.POST['bimg']
+        bookImage = request.POST['img']
 
         if Books.objects.filter(bookName=bookName).exists():
-            messages.info(request, 'This book is already exist!')
+            #messages.info(request, 'This book is already exist!')
             return redirect('/')
         else:
             book = Books(bookName=bookName, bookAuthor=bookAuthor, bookDescription=bookDescription, bookTotal=bookNumbers, bookImage=bookImage)
