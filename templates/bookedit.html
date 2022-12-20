@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="bg-title">
                     <h1 class="bg-h">Library Books</h1>
-                    <button class="add">Add button &plus;</button>
+                    <!--button class="add">Add button &plus;</button-->
                 </div>
                 <div class="table-div">
                     <table cellspacing="0" width="100%">
@@ -50,7 +50,7 @@
                             <th>Book_Total</th>
                             <!--th>Book_Borrowed</th>
                             <th>Book_Remain</th-->
-                            <th>Action</th>
+                            <!--th>Action</th-->
                         </tr>
                         {% for book in books %}
                         <tr>
@@ -60,10 +60,10 @@
                             <td>{{ book.bookTotal }}</td>
                             <!--td>25</td>
                             <td>18</td-->
-                            <td class="t-btn">
+                            <!--td class="t-btn">
                                 <a href="/edit/{{ book.id }}" class="row-id">Edit</a>
                                 <a href="delete/{{ book.id }}" class="row-del">Delete</a>
-                            </td>
+                            </td-->
                         </tr>
                         {% endfor %}
                     </table>
@@ -71,11 +71,11 @@
             </div>
         </div>
         {% if bookedit %}
-        <div class="bk-form-cont-edit">
+        <div class="bk-form-cont">
             <div class="bk-form">
-                <button class="bk-btn" id="bk-id">&times;</button>
-                <h1>Add Book</h1>
-                <form action="/editrecord/{{ bookedit.id }}" method="post">
+                <a href="{% url 'books' %}" class="bk-btn" id="bk-id">&times;</a>
+                <h1>Edit data</h1>
+                <form action="editrecord/{{ bookedit.id }}" method="post">
 
                     {% csrf_token %}
                     

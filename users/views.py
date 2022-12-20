@@ -4,7 +4,7 @@ from django.template import loader
 
 
 def users(request):
-    user = User.objects.all()
+    user = User.objects.all().order_by('id')
 
     data = {"name": user}
 

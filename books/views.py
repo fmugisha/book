@@ -7,7 +7,7 @@ from django.template import loader
 
 def books(request):
 
-    book = Books.objects.all()
+    book = Books.objects.all().order_by('id')
 
     books = {
         'books':book
@@ -41,19 +41,28 @@ def delete(request, id):
     return redirect('books')
 
 def edit(request, id):
-    edited = Books.objects.get(id=id)
-    context = {
-        'bookedit': edited,
-    }
-    return render(request, 'book.html', context)
+  editbook = Books.objects.get(id=id)
+  book = Books.objects.all().order_by('id')
+  template = loader.get_template('bookedit.html')
+  context = {
+    'bookedit': editbook,
+    'books': book,
+  }
+  return HttpResponse(template.render(context, request))
 
 def editrecord(request, id):
-    edited = Books.objects.get(id=id)
-    edited.bookName = request.POST['ename']
-    edited.bookAuthor = request.POST['eauthor']
-    edited.bookDescription = request.POST['edesc']
-    edited.bookTotal = request.POST['enumber']
-    edited.bookImage = request.POST['eimage']
-    edited.save();
+    name = request.POST['ename']
+    author = request.POST['eauthor']
+    description = request.POST['edesc']
+    total = request.POST['enumber']
+    image = request.POST['eimage']
 
-    return redirect('books')
+    edited = Books.objects.get(id=id)
+    edited.bookName = name
+    edited.bookAuthor = author
+    edited.bookDescription = description
+    edited.bookTotal = total
+    edited.bookImage = image
+    edited.save()
+
+    return HttpResponseRedirect(reverse('books'))

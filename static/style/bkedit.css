@@ -145,8 +145,8 @@ body {
 }
 
 .bg-admin .container {
-    width: 80%;
-    margin-left: 10%;
+    width: 63%;
+    margin-left: 1%;
     margin-top: 5%;
     padding: 1% 0;
 }
@@ -162,7 +162,7 @@ body {
 }
 
 .container .add {
-    width: 15%;
+    width: 20%;
     font-size: 15px;
     padding: 1%;
     margin-left: 20%;
@@ -189,19 +189,26 @@ td, th {
     width: auto;
 }
 
+#action {
+    width: 15%;
+    height: auto;
+}
+
 .t-btn {
     display: flex;
     padding: 0;
     margin: 0;
+    justify-items: center;
+    align-items: center;
 }
 
-.row-id, .row-del {
+.actionBtn {
     position: relative;
     color: #000;
     margin: 0;
     padding: 4px;
     width: 50%;
-    height: 31px;
+    height: 32px;
     border: none;
     font-size: 17px;
     font-weight: 300;
@@ -217,8 +224,7 @@ td, th {
 }
 
 .bk-form-cont {
-    display: none;
-    position: absolute;
+    position: fixed;
     width: 25%;
     height: 96%;
     margin-top: 1%;
@@ -228,17 +234,6 @@ td, th {
     animation: bk-display 0.05s;
 }
 
-.bk-form-cont-edit {
-    position: absolute;
-    width: 25%;
-    height: 96%;
-    margin-top: 1%;
-    transform: translateX(290%);
-    background-color: rgba(25, 211, 133, 0.95);
-    border-radius: 10px;
-     /*animation: bk-display 0.05s;*/
-}
-/*
 @keyframes bk-display {
     0% {
         transform: translateX(300%);
@@ -247,7 +242,7 @@ td, th {
         transform: translateX(290%);
     }
 }
-*/
+
 .bk-form h1 {
     text-align: center;
     font-size: 25px;
@@ -262,7 +257,7 @@ td, th {
     cursor: pointer;
 }
 
-.bk-btn a {
+.bk-form a {
     text-decoration: none;
     border: none;
 }

@@ -4,7 +4,7 @@ const msg = document.querySelector(".lg-msg");
 
 const add = document.querySelector(".add");
 const edit = document.querySelector(".row-id");
-//const cancelbtn = document.getElementById("bk-id");
+const cancelbtn = document.getElementById("bk-id");
 const form = document.querySelector(".bk-form-cont");
 const formEdit = document.querySelector(".bk-form-cont-edit");
 
@@ -19,7 +19,7 @@ add.addEventListener('click', (e) => {
     form.style.display = 'block';
 });
 
-edit.addEventListener('click', (event) => {
-    event.preventDefault();
+edit.addEventListener('click', (e) => {
+    e.preventDefault();
     formEdit.style.display = 'block';
 });
