@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +31,7 @@
             {% for book in books %}
             <div class="book-cont">
                 <div class="b-ph">
-                    <img src="{{ book.bookImage }}" alt="book-photo" id="bk-img">
+                    <img src="{{ book.bookImage.url }}" alt="book-photo" id="bk-img">
                 </div>
                 <div class="b-info">
                     <div class="b-name"><a href="#">{{ book.bookName }}</a></div>
