@@ -101,7 +101,7 @@
             <div class="bk-form">
                 <a href="{% url 'books' %}" class="bk-btn" id="bk-id">&times;</a>
                 <h1>Add Book</h1>
-                <form action="book_store" method="post">
+                <form action="book_store" method="post" enctype="multipart/form-data">
 
                     {% csrf_token %}
                     
