@@ -79,15 +79,15 @@
 
                     {% csrf_token %}
                     
-                    <label for="bname">Book Name</label>
+                    <label for="ename">Book Name</label>
                     <input type="text" name="ename" id="ename" value="{{ bookedit.bookName }}">
-                    <label for="bauthor">Book Author</label>
+                    <label for="eauthor">Book Author</label>
                     <input type="text" name="eauthor" id="eauthor" value="{{ bookedit.bookAuthor }}">
-                    <label for="bdesc">Book Description</label>
+                    <label for="edesc">Book Description</label>
                     <input type="text" name="edesc" id="edesc" value="{{ bookedit.bookDescription }}">
-                    <label for="bnum">Book Numbers</label>
+                    <label for="enum">Book Numbers</label>
                     <input type="number" name="enumber" id="enum" value="{{ bookedit.bookTotal }}">
-                    <label for="bimg">Book Image</label>
+                    <label for="eimg">Book Image</label>
                     <input type="file" name="eimage" id="eimg" value="{{ bookedit.bookImage }}">
                     <p class="sbt-msg"></p>
                     <div class="lg-btn">
