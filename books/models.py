@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Books(models.Model):
+class Book(models.Model):
     bookName = models.CharField(max_length=100)
     bookAuthor = models.CharField(max_length=100)
     bookDescription = models.TextField()

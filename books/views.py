@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from books.models import Books
+from books.models import Book
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -7,7 +7,7 @@ from django.template import loader
 
 def books(request):
 
-    book = Books.objects.all().order_by('id')
+    book = Book.objects.all().order_by('id')
 
     books = {
         'books':book
@@ -23,11 +23,11 @@ def book_store(request):
         bookNumbers = request.POST['bnum']
         bookImage = request.POST['img']
 
-        if Books.objects.filter(bookName=bookName).exists():
+        if Book.objects.filter(bookName=bookName).exists():
             #messages.info(request, 'This book is already exist!')
             return redirect('/')
         else:
-            book = Books(bookName=bookName, bookAuthor=bookAuthor, bookDescription=bookDescription, bookTotal=bookNumbers, bookImage=bookImage)
+            book = Book(bookName=bookName, bookAuthor=bookAuthor, bookDescription=bookDescription, bookTotal=bookNumbers, bookImage=bookImage)
             book.save();
             return redirect('books')
     else:
@@ -35,14 +35,14 @@ def book_store(request):
 
 def delete(request, id):
 
-    delBook = Books.objects.get(id=id)
+    delBook = Book.objects.get(id=id)
     delBook.delete()
 
     return redirect('books')
 
 def edit(request, id):
-  editbook = Books.objects.get(id=id)
-  book = Books.objects.all().order_by('id')
+  editbook = Book.objects.get(id=id)
+  book = Book.objects.all().order_by('id')
   template = loader.get_template('bookedit.html')
   context = {
     'bookedit': editbook,
@@ -57,7 +57,7 @@ def editrecord(request, id):
     total = request.POST['enumber']
     image = request.POST['eimage']
 
-    edited = Books.objects.get(id=id)
+    edited = Book.objects.get(id=id)
     edited.bookName = name
     edited.bookAuthor = author
     edited.bookDescription = description

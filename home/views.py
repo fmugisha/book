@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from books.models import Books
+from books.models import Book
 
 # Create your views here.
 def home(request):
 
-    book = Books.objects.all().values()
+    book = Book.objects.all().values()
 
     books = {
         'books':book
